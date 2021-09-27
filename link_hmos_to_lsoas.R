@@ -6,7 +6,7 @@ ctax <- st_read("data-raw/ctax.geojson")
 lsoas <- st_read("data-raw/lsoa11_boundaries_full.geojson") %>%
   rename(LSOA11CD = LSOA11Code)
 
-licences_by_lsoa <- hmos %>% 
+licences_by_lsoa <- licences %>% 
   st_join(lsoas) %>% 
   st_drop_geometry() %>% 
   group_by(LSOA11CD) %>%

@@ -1,0 +1,45 @@
+---
+title: Cathays and Plasnewydd HMO Density Map
+output: html_document
+---
+
+```{r, echo=FALSE, message=FALSE}
+suppressPackageStartupMessages({
+  library(leaflet)
+  library(sf)
+  library(biscale)
+  library(scales)
+})
+```
+
+```{css, echo=FALSE}
+.leaflet-tile-pane {
+  filter: grayscale(1.0);
+}
+
+.leaflet-overlay-pane {
+  mix-blend-mode: multiply;
+}
+
+
+.leaflet-overlay-pane path{
+  mix-blend-mode: multiply;
+}
+
+.leaflet{
+  width: 100vw !important; 
+  height: 100vh !important;
+  position: fixed !important; 
+  top: 0px !important; 
+  left: 0px !important;
+}
+
+.leaflet-tooltip hr{
+  margin: 0.5em 0;
+}
+
+```
+
+```{r, echo=FALSE}
+m
+```
