@@ -6,6 +6,8 @@ See  [here for the figures](output/hmos_by_ward_2019.csv).
 
 - Licencing requirements for HMOs are more strict in Cathays and Plasnewydd, and so many more properties are licensed as HMOs in these wards
 
+- There is substantial variation within wards, and ward boundaries might not be what you expect. ([See this map of HMO-density by LSOA in Cathays and Plasnewydd for example.](https://stupidpupil.github.io/cardiff_hmo_temp/output/map.html))
+
 - Households resident in HMOs would be a better metric than the proportion of properties
 
 - Counting dwellings is tricky, but generally HMOs are *probably* counted as a single dwelling (I think, because of how council tax is applied)
