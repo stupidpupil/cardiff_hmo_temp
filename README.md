@@ -1,10 +1,14 @@
 This repository attempts to provide figures on the number of HMOs in each Cardiff ward versus the total number of dwellings, as of 2019/2020.
 
+See  [here for the figures](output/hmos_by_ward_2019.csv).
+
 ## Beware
 
 - Licencing requirements for HMOs are more strict in Cathays and Plasnewydd, and so many more properties are licensed as HMOs in these wards
 
-- Households resident in HMOs would be better metric than the proportion of properties
+- Households resident in HMOs would be a better metric than the proportion of properties
+
+- Counting dwellings is tricky, but generally HMOs are *probably* counted as a single dwelling (I think, because of how council tax is applied)
 
 ## Source data and licences
 
@@ -18,7 +22,8 @@ It also contains data derived from:
 ## How to
 ```R
 
-source("dump2.R")
+source("fetch_licences.R")
+source("fetch_ctax.R")
 source("link_hmos_to_lsoas.R")
 
 ```
