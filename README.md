@@ -1,4 +1,4 @@
-This repository attempts to provide figures on the number of HMOs in each Cardiff ward versus the total number of dwellings, as of 
+This repository attempts to provide figures on the number of HMOs in each Cardiff ward versus the total number of dwellings, as of 2019/2020.
 
 ## Beware
 
