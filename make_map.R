@@ -31,7 +31,7 @@ rate_by_lsoa <- dwellings_by_lsoa %>%
 
 lsoa_boundaries <- st_read("data-raw/lsoa11_boundaries_full.geojson") %>%
   rename(LSOA11CD = LSOA11Code) %>% st_transform(crs = 4326) %>%
-  left_join(read_csv("data-raw/Lower_Layer_Super_Output_Area__2011__to_Ward__2020__Lookup_in_England_and_Wales.csv"))
+  left_join(read_csv("data-raw/Lower_Layer_Super_Output_Area__2011__to_Ward__2020__Lookup_in_England_and_Wales.csv")) %>%
   filter(LSOA11CD %in% rate_by_lsoa$LSOA11CD) %>%
   left_join(rate_by_lsoa)
  
