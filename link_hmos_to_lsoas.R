@@ -1,7 +1,7 @@
 library(sf)
 library(tidyverse)
 
-hmos <- st_read("data-raw/dump2.geojson")
+hmos <- st_read("data-raw/licences.geojson")
 lsoas <- st_read("data-raw/lsoa11_boundaries_full.geojson") %>%
   rename(LSOA11CD = LSOA11Code)
 
@@ -9,7 +9,7 @@ hmos_by_lsoa <- hmos %>%
   st_join(lsoas) %>% 
   st_drop_geometry() %>% 
   group_by(LSOA11CD) %>%
-  summarise(CountHMOs = n())
+  summarise(CountLicensedHMOs = n())
 
 dwellings_by_lsoa <- read_csv("data-raw/Table_CTSOP4_1_2020.csv") %>%
   filter(band == "All") %>%
@@ -26,9 +26,9 @@ dwellings_by_lsoa %>%
   filter(LAD20NM %>% str_detect("Cardiff")) %>%
   group_by(WD20NM) %>%
   summarise(
-    CountHMOs = sum(CountHMOs, na.rm=TRUE),
+    CountLicensedHMOs = sum(CountLicensedHMOs, na.rm=TRUE),
     CountDwellings = sum(CountDwellings),
-    PropHMOs = CountHMOs/CountDwellings
+    PropHMOs = CountLicensedHMOs/CountDwellings
   ) %>% 
   arrange(-PropHMOs) %>%
   write_excel_csv("output/hmos_by_ward_2019.csv")
